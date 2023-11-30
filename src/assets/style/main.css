@@ -1,0 +1,41 @@
+
+/* Importación de las fuentes  */
+@font-face {
+  font-family: 'Montserrat Black';
+  font-style: normal;
+  font-weight: 400;
+  src: url('@/assets/fonts/montserrat/Montserrat-Black.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Montserrat Bold';
+  font-style: normal;
+  font-weight: 500;
+  src: url('@/assets/fonts/montserrat/Montserrat-bold.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Montserrat Medium';
+  font-style: normal;
+  font-weight: 400;
+  src: url('@/assets/fonts/montserrat/Montserrat-Medium.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Montserrat Regular';
+  font-style: normal;
+  font-weight: 400;
+  src: url('@/assets/fonts/montserrat/Montserrat-Regular.woff2') format('woff2');
+}
+
+/* Estilos iniciales  */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  background-color: #fff;
+}

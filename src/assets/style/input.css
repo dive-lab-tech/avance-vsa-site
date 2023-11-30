@@ -3,3 +3,9 @@
 @tailwind utilities;
 
 
+/* Components Home */
+@layer components  {
+   .btn-intro-home {
+      @apply bg-white rounded-full px-3 py-1 font-montserrat-bold font-bold ; 
+   }
+}
