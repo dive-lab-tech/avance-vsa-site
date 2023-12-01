@@ -13,10 +13,11 @@ library.add(
     IconsFa.faArrowRight,
     IconsFa.faArrowLeftLong,
     IconsFa.faArrowRightLong,
-    fab.faFacebookF,
+    IconsFa.faBars,
+    fab.faFacebook,
     fab.faTwitter,
     fab.faInstagram,
-    fab.faLinkedin,
+    fab.faYoutube,
 )
 
 import App from './App.vue'

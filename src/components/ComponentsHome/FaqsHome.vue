@@ -4,7 +4,7 @@ import { faqsHome } from '@/utils/listItems'
 </script>
 
 <template>
-    <div class="grid grid-cols-2">
+    <div class="grid grid-cols-2 max-[767px]:grid-cols-1">
         <div>
             <div class="py-10">
                 <h3 class=" font-montserrat-medium font-bold text-2xl uppercase">PREGUNTAS MÁS FRECUENTES</h3>
@@ -26,7 +26,7 @@ import { faqsHome } from '@/utils/listItems'
                 </div>
             </div>
         </div>
-        <div class=" px-10">
+        <div class=" px-10 max-[767px]:px-0">
             <div class="  py-10">
                 <h3 class=" font-montserrat-medium font-bold text-2xl uppercase">NOTICIAS</h3>
             </div>

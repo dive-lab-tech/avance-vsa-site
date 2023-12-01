@@ -8,4 +8,34 @@
    .btn-intro-home {
       @apply bg-white rounded-full px-3 py-1 font-montserrat-bold font-bold ; 
    }
+  
+
+
+
+ /* Pantallas grandes */
+ @media (min-width: 1500px) {
+}
+/* PC */
+@media (min-width: 1200px) and (max-width: 1499px) {}
+/* Pantallas para tablets */
+@media only screen and (min-width: 801px) and (max-width: 1199px) {
+}
+
+/* Pantallas para tablets pequeñas*/
+@media only screen and (min-width: 768px) and (max-width: 800px) {
+}
+
+/* Pantallas mobiles */
+@media (max-width: 767px) {
+   .container-btn-intro{
+      @apply flex justify-center items-center;
+   }
+   .btn-intro-home {
+      @apply bg-white rounded-full px-3 py-1 font-montserrat-bold font-bold ; 
+   }
+
+   
+
+}
+
 }

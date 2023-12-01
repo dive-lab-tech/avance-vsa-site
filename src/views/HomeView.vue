@@ -1,7 +1,6 @@
 <script setup>
 import { sustainableProjectHome } from '@/utils/listItems.js'
-import ModalSliderHomeVue from '@/components/ComponentsHome/ModalSliderHome.vue'
-import FooterComponent from '@/components/common/FooterComponent.vue'
+import ModalSliderHomeVue from '@/components/common/ModelosSliderComponent.vue'
 import FaqsHome from '@/components/ComponentsHome/FaqsHome.vue'
 import FormHome from '@/components/ComponentsHome/FormHome.vue'
 import { onMounted, onUnmounted, ref } from 'vue'
@@ -28,29 +27,30 @@ const widthScreen = () => {
     <div class="w-full">
         <!-- Banner Home-->
         <section class="w-full">
-            <img src="@/assets/image/banner-home.jpg" alt="" srcset="" />
+            <img src="@/assets/image/banner-home.jpg" alt="" srcset="" v-if="isMobile==false"/>
+            <img src="@/assets/image/banner-home-mobile.jpg" alt="" srcset="" v-if="isMobile==true"/>
         </section>
         <!-- Introduction Site -->
         <section class="w-full bg-primary">
             <div class="w-full">
-                <div class="grid grid-cols-3 px-16 py-6">
+                <div class="grid grid-cols-3 gap-5 px-16 py-6 max-[767px]:px-5 max-[767px]:grid-cols-1">
                     <div class="flex flex-col justify-between">
                         <img src="@/assets/image/txt-intro-1.png" alt="" />
-                        <div class="pl-16">
+                        <div class="pl-16 max-[767px]:pl-0 container-btn-intro">
                             <a href="" class="btn-intro-home">Ver más<font-awesome-icon :icon="['fas', 'arrow-right']"
                                     class="pl-4" /></a>
                         </div>
                     </div>
                     <div class="flex flex-col justify-between">
                         <img src="@/assets/image/txt-intro-2.png" alt="" srcset="" />
-                        <div class="pl-16">
+                        <div class="pl-16 max-[767px]:pl-0 container-btn-intro">
                             <a href="" class="btn-intro-home">Ver más<font-awesome-icon :icon="['fas', 'arrow-right']"
                                     class="pl-4" /></a>
                         </div>
                     </div>
                     <div class="flex flex-col justify-between">
                         <img src="@/assets/image/txt-intro-3.png" alt="" srcset="" />
-                        <div class="pl-16">
+                        <div class="pl-16 max-[767px]:pl-0 container-btn-intro">
                             <a href="" class="btn-intro-home">Ver más<font-awesome-icon :icon="['fas', 'arrow-right']"
                                     class="pl-4" /></a>
                         </div>
@@ -59,9 +59,9 @@ const widthScreen = () => {
             </div>
         </section>
         <!-- Section about us -->
-        <section class="w-full bg-accent px-36 py-20">
-            <div class="grid grid-cols-2">
-                <div class="px-10">
+        <section class="w-full bg-accent px-36 py-20 max-[1199px]:px-5">
+            <div class="grid grid-cols-2 max-[767px]:grid-cols-1">
+                <div class="px-10 max-[767px]:px-0">
                     <h1 class="font-montserrat-black text-4xl">Sobre nuestro proyecto</h1>
                     <p class="font-montserrat-medium font-bold">Conoce tu nuevo lugar para vivir</p>
                     <br />
@@ -81,11 +81,11 @@ const widthScreen = () => {
                 </div>
             </div>
         </section>
-        <div class="w-full bg-white px-36">
+        <div class="w-full bg-white px-36 max-[1199px]:px-5">
             <!-- Section projects  -->
             <section class="w-full py-5">
                 <div class="w-full">
-                    <div class="grid grid-cols-2">
+                    <div class="grid grid-cols-2 gap-7 max-[767px]:grid-cols-1 ">
                         <div>
                             <img src="@/assets/image/img-proyectos-home.jpg" alt="" />
                         </div>
@@ -110,9 +110,9 @@ const widthScreen = () => {
             <!-- Section project two -->
             <section class="w-full py-10">
                 <div class="w-full">
-                    <div class="grid grid-cols-2">
-                        <div>
-                            <div class="h-full flex items-end px-10">
+                    <div class="grid grid-cols-2 gap-7 max-[767px]:grid-cols-1">
+                        <div class="max-[767px]:order-2">
+                            <div class="h-full flex items-end px-10 max-[767px]:px-0">
                                 <div class="w-full h-full flex flex-col justify-end">
                                     <p class="font-montserrat-bold text-lg">
                                         Cada modelo de vivienda cuenta con ambientes abiertos, esto permite que la sala,
@@ -130,7 +130,7 @@ const widthScreen = () => {
                                 </div>
                             </div>
                         </div>
-                        <div>
+                        <div class=" max-[767px]:order-1 ">
                             <img src="@/assets/image/interior-sala-home.jpg" alt="" />
                         </div>
                     </div>
@@ -154,7 +154,7 @@ const widthScreen = () => {
                 <div class="" v-if="isMobile == false">
                     <img src="@/assets/image/testimonio-desktop.png" alt="" srcset="" />
                 </div>
-                <div v-if="isMobile">
+                <div v-if="isMobile" class="flex justify-center">
                     <img src="@/assets/image/testimonio-mobile.png" alt="" srcset="" />
                 </div>
             </section>
@@ -164,7 +164,6 @@ const widthScreen = () => {
             </section>
         </div>
     </div>
-    <FooterComponent />
 </template>
 
 <style scoped>
