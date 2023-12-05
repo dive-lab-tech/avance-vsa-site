@@ -22,6 +22,8 @@ export const sustainableProjectHome = [
     }
 ]
 
+
+
 export const faqsHome = [
     {
         ask: '¿Cuáles son los requisitos para aplicar para solicitante empleado?',
@@ -107,4 +109,4 @@ export const faqsHome = [
             },
         ]
     },
-]
+];

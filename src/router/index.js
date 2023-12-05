@@ -10,6 +10,10 @@ const router = createRouter({
       component: ()=> import('../views/HomeView.vue')
     },
     {
+      path: '/home',
+      redirect: { name: 'home' }
+    },
+    {
       path: '/modelos',
       name: 'modelos',
       component: ()=> import('../views/ModelosView.vue')
@@ -24,6 +28,16 @@ const router = createRouter({
       name: 'buganvilia-a',
       component: ()=> import('../views/BuganviliaAView.vue')
 
+    },
+    {
+      path: '/amenidades',
+      name: 'amenidades',
+      component: ()=> import('../views/AmenidadesView.vue')
+    },
+    {
+      path: '/prueba',
+      name: 'prueba',
+      component: ()=> import('@/components/common/ContactComponent.vue')
     },
     {
       path: '/:catchAll(.*)',

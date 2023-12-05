@@ -38,16 +38,16 @@ import { RouterLink } from 'vue-router'
                             <li>
                                 <RouterLink
                                     class="text-white transition hover:text-white/75 font-montserrat-medium font-bold text-lg"
-                                    to="/">
+                                    to="/amenidades">
                                     Amenidades
                                 </RouterLink>
                             </li>
                             <li>
-                                <RouterLink
+                                <a
                                     class="text-white transition hover:text-white/75 font-montserrat-medium font-bold text-lg"
-                                    to="/">
+                                    href="/#contacto">
                                     Contacto
-                                </RouterLink>
+                                </a>
                             </li>
                         </ul>
                     </nav>

@@ -2,6 +2,11 @@
 import { ref, onMounted, onUnmounted } from 'vue'
 import GallerySliderComponent from '@/components/ComponentsBuganvilia/GallerySliderComponent.vue'
 import PlantasComponent from '@/components/common/PlantasComponent.vue'
+import ContactComponent from '@/components/common/ContactComponent.vue'
+import pdfCustom from '@/assets/pdf/BUGANVILIA-MODELO-A-O-B-PERSONALIZADA.pdf'
+import pdfNoCustom from '@/assets/pdf/BUGANVILIA-MODELO-A-O-B-ESTANDAR.pdf'
+import urlBrochure from '@/assets/pdf/BROCHURE-VDS-PARA-WEB-BUGANVILIA-A.pdf'
+
 
 var widthButtonDownload = ref(null);
 var isMobile = ref(null);
@@ -28,11 +33,8 @@ const widthScreen = () => {
     const buttonBrochure = document.querySelector('.img-btn-download');
     if (buttonBrochure) {
         widthButtonDownload.value = buttonBrochure.offsetHeight;
-        console.log(widthButtonDownload.value)
     }
-    else {
-        console.log('no existe')
-    }
+    
 };
 
 
@@ -78,8 +80,8 @@ const widthScreen = () => {
                 </div>
             </div>
             <div class="btn-download-brochure w-fit left-8 relative" style="margin-top: -1.25rem;">
-                <a href="/public/pdf/BROCHURE-VDS-PARA-WEB-BUGANVILIA-A.pdf"
-                    class="flex justify-center w-fit max-[767px]:w-full"> <img
+                <a :href="urlBrochure"
+                    class="flex justify-center w-fit max-[767px]:w-full" target="_blank"> <img
                         src="@/assets/image/images-buganvilia-a/btn-descargar.png" alt="" class="img-btn-download"></a>
             </div>
         </section>
@@ -95,8 +97,8 @@ const widthScreen = () => {
         <div class="w-full ">
             <!-- Section plantas arquitectónicas -->
             <section class="w-full flex justify-center py-10">
-                <div class=" w-9/12 max-[767px]:w-full min-[1500px]:w-7/12">
-                    <PlantasComponent />
+                <div class=" w-9/12 max-[767px]:w-full min-[1500px]:w-7/12 px-5 lg:px-0">
+                    <PlantasComponent :urlCustom="pdfCustom" :urlNoCustom="pdfNoCustom" />
                 </div>
             </section>
             <!-- Section Modelo -->
@@ -120,10 +122,12 @@ const widthScreen = () => {
                 </div>
             </section>
             <!-- Section Asesores y contáctenos  -->
-            <section class=" w-full flex justify-center">
+            <section class=" w-full flex justify-center max-[767px]:px-5">
                 <div class=" w-9/12 max-[767px]:w-full min-[1500px]:w-7/12">
+                    <ContactComponent />
                 </div>
             </section>
+          
         </div>
 
 

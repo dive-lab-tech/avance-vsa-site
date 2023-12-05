@@ -7,6 +7,7 @@ import { fab } from '@fortawesome/free-brands-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 import * as IconsFa from '@fortawesome/free-solid-svg-icons'
 
+
 library.add(
     IconsFa.faPlus,
     IconsFa.faCaretDown,
@@ -27,5 +28,6 @@ const app = createApp(App)
 
 app.use(createPinia())
 app.use(router)
+
 app.component('font-awesome-icon', FontAwesomeIcon)
 app.mount('#app')

@@ -159,7 +159,7 @@ const widthScreen = () => {
                 </div>
             </section>
             <!-- Section contact -->
-            <section class="w-full py-10">
+            <section class="w-full py-10" id="contacto">
                 <FormHome />
             </section>
         </div>

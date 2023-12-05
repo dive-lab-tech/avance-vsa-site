@@ -81,8 +81,8 @@ const widthScreen = () => {
       class="mySwiper w-full"
       ref="swiperRef"
     >
-      <SwiperSlide><RouterLink to="/"><img src="@/assets/image/slider-home-buganvilia.jpg"></RouterLink></SwiperSlide>
-      <SwiperSlide><RouterLink to="/"><img src="@/assets/image/slider-home-veranera.jpg"></RouterLink></SwiperSlide>
+      <SwiperSlide><RouterLink to="/modelos/buganvilia-a"><img src="@/assets/image/slider-home-buganvilia.jpg"></RouterLink></SwiperSlide>
+      <SwiperSlide><RouterLink to="/modelos/veranera-a"><img src="@/assets/image/slider-home-veranera.jpg"></RouterLink></SwiperSlide>
     </swiper>
 
     <button class="button-next ml-4" @click="swiperRef.value.slideNext()"><font-awesome-icon :icon="['fas', 'arrow-right-long']" class=""/></button>
@@ -111,8 +111,8 @@ const widthScreen = () => {
       class="mySwiper w-full"
       ref="swiperRef"
     >
-      <SwiperSlide><RouterLink to="/"><img src="@/assets/image/slider-home-buganvilia-mobile.jpg"></RouterLink></SwiperSlide>
-      <SwiperSlide><RouterLink to="/"><img src="@/assets/image/slider-home-veranera-mobile.jpg"></RouterLink></SwiperSlide>
+      <SwiperSlide><RouterLink to="/modelos/buganvilia-a"><img src="@/assets/image/slider-home-buganvilia-mobile.jpg"></RouterLink></SwiperSlide>
+      <SwiperSlide><RouterLink to="/modelos/veranera-a"><img src="@/assets/image/slider-home-veranera-mobile.jpg"></RouterLink></SwiperSlide>
     </swiper>
 
   <div class="flex justify-end w-full">

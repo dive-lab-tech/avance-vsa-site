@@ -1,4 +1,78 @@
 <script setup>
+import { useForm } from 'vee-validate';
+import * as yup from 'yup';
+import axios from 'axios';
+import { onMounted } from 'vue';
+import Swal from 'sweetalert2';
+
+const { values, errors, defineField, resetForm, handleSubmit } = useForm({
+    validationSchema: yup.object({
+        email: yup.string().email('Ingrese una dirección de correo electrónico válida').required('El correo electrónico es obligatorio'),
+        name: yup.string().min(6, 'El nombre debe tener al menos 6 caracteres').required('El nombre es obligatorio'),
+        phone: yup.string().matches(/^\d{8}$/, 'El número de teléfono debe tener exactamente 8 dígitos').nullable(),
+        message: yup.string().required('El mensaje es obligatorio'),
+    }),
+});
+
+const [email, emailAttrs] = defineField('email');
+const [name, nameAttrs] = defineField('name');
+const [phone, phoneAttrs] = defineField('phone');
+const [message, messageAttrs] = defineField('message');
+
+const onSubmit = handleSubmit(
+    async (values) => {
+        // alert(JSON.stringify(values, null, 2));
+        // resetForm();
+        const data = {
+            name: values.name,
+            email: values.email,
+            phone: values.phone,
+            project_name: '',
+            message: values.message,
+        };
+
+        try {
+            const response = await axios.post('https://back.avanceingenieros.com/api/contacts/4', data);
+            console.log(response);
+            Swal.fire({
+                title: '¡Gracias!',
+                text: 'Su mensaje ha sido enviado con éxito.',
+                icon: 'success',
+                showConfirmButton: false,
+                confirmButtonColor: '#000000',
+                background: '#ffffff',
+                timer: 2000,
+            });
+            resetForm();
+        }
+        catch (error) {
+            Swal.fire({
+                title: '¡Error!',
+                text: 'Error al enviar el mensaje, por favor intente de nuevo.',
+                icon: 'error',
+                showConfirmButton: false,
+                confirmButtonColor: '#000000',
+                background: '#ffffff',
+                timer: 2000,
+            });
+        }
+
+    },
+    ({ errors }) => {
+        const firstError = Object.keys(errors)[0];
+        const el = document.querySelector(`[name="${firstError}"]`);
+        el?.scrollIntoView({
+            behavior: 'smooth',
+        });
+        el.focus();
+
+    },
+);
+const formatPhoneNumber = (e) => {
+    const target = e.target;
+    const input = target.value.replace(/\D/g, '').substring(0, 8);
+    target.value = input.substring(0, 4) + '-' + input.substring(4, 8);
+};
 
 
 </script>
@@ -49,20 +123,27 @@
                     <h1 class=" font-montserrat-bold text-3xl">Formulario de contacto</h1>
                 </div>
                 <div>
-                    <form action="">
+                    <form action="post" @submit="onSubmit">
                         <div class="grid grid-cols-2 gap-3 max-[767px]:grid-cols-1">
-                            <input type="text" placeholder="Nombre " class="py-2">
-                            <input type="email" placeholder="Correo Electrónico" class="py-2">
+                            <input type="text" name="name" placeholder="Nombre " v-model="name" v-bind="nameAttrs"
+                                class="py-2">
+                            <input type="email" name="email" placeholder="Correo Electrónico" v-model="email"
+                                v-bind="emailAttrs" class="py-2">
                         </div>
                         <div class="grid grid-cols-2 mt-2 max-[767px]:grid-cols-1">
-                            <input type="number" placeholder="Número de teléfono" class="py-2">
+                            <input type="tel" name="phone" placeholder="Numero de teléfono" v-on:input="formatPhoneNumber"
+                                v-model="phone" v-bind="phoneAttrs" step="1" maxlength="8" class="py-2">
                         </div>
                         <div class="mt-2">
-                            <textarea name="" id="" placeholder="Mensaje" class="py-2"></textarea>
+                            <textarea name="message" id="" placeholder="Mensaje" v-model="message" v-bind="messageAttrs"
+                                class="py-2"></textarea>
                         </div>
                         <div class="flex justify-end mt-2">
                             <input type="submit" value="Enviar mensaje"
                                 class=" font-montserrat-medium font-bold uppercase rounded-full text-white bg-black px-3 py-1">
+                        </div>
+                        <div class="grid grid-cols-1">
+                            <p class=" text-red-400 pl-1" v-for="(error, index) in errors" :key="index">{{ error }}</p>
                         </div>
                     </form>
                 </div>
@@ -85,7 +166,7 @@ input:focus {
 }
 
 input[ type=text],
-input[ type=number],
+input[ type=tel],
 input[ type=email] {
     margin-bottom: 12px;
     border-bottom: 2px solid #000000;
@@ -124,7 +205,7 @@ textarea::placeholder {
 @media (max-width: 767px) {
 
     input[ type=text],
-    input[ type=number],
+    input[ type=tel],
     input[ type=email] {
         width: 100%;
     }
@@ -132,5 +213,4 @@ textarea::placeholder {
     input[type=submit] {
         width: 100%;
     }
-}
-</style>
+}</style>
