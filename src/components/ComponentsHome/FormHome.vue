@@ -79,7 +79,7 @@ const formatPhoneNumber = (e) => {
 <template>
     <div class="">
         <div class="grid grid-cols-2 gap-7 max-[767px]:grid-cols-1">
-            <div class="max-[767px]:order-2">
+            <div class="max-[767px]:order-2" id="maps">
                 <div class="mb-7">
                     <h2 class=" font-montserrat-bold text-3xl">Mapa</h2>
                 </div>
@@ -118,9 +118,9 @@ const formatPhoneNumber = (e) => {
                     </div>
                 </div>
             </div>
-            <div class=" max-[767px]:order-1">
+            <div class=" max-[767px]:order-1" id="contacto">
                 <div class="mb-7">
-                    <h1 class=" font-montserrat-bold text-3xl">Formulario de contacto</h1>
+                    <h1 class=" font-montserrat-bold text-2xl lg:text-3xl">Formulario de contacto</h1>
                 </div>
                 <div>
                     <form action="post" @submit="onSubmit">

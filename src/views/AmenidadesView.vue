@@ -27,10 +27,10 @@ const widthScreen = () => {
     const buttonBrochure = document.querySelector('.img-btn-download');
     if (buttonBrochure) {
         widthButtonDownload.value = buttonBrochure.offsetHeight;
-        console.log(widthButtonDownload.value)
+        // console.log(widthButtonDownload.value)
     }
     else {
-        console.log('no existe')
+        // console.log('no existe')
     }
 };
 

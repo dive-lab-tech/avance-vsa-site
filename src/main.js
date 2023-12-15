@@ -15,6 +15,7 @@ library.add(
     IconsFa.faArrowLeftLong,
     IconsFa.faArrowRightLong,
     IconsFa.faBars,
+   
     fab.faFacebook,
     fab.faTwitter,
     fab.faInstagram,

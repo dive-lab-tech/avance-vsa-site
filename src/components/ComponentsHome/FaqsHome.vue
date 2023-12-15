@@ -7,7 +7,7 @@ import { faqsHome } from '@/utils/listItems'
     <div class="grid grid-cols-2 max-[767px]:grid-cols-1">
         <div>
             <div class="py-10">
-                <h3 class=" font-montserrat-medium font-bold text-2xl uppercase">PREGUNTAS MÁS FRECUENTES</h3>
+                <h3 class=" font-montserrat-medium font-bold text-xl lg:text-2xl uppercase">PREGUNTAS MÁS FRECUENTES</h3>
             </div>
             <div>
                 <div class="collapse collapse-plus bg-base-200 mb-3 font-montserrat-medium px-5 py-5"

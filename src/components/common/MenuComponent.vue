@@ -2,6 +2,23 @@
 import { RouterLink } from 'vue-router'
 </script>
 <template>
+  <dialog id="my_modal_3" class="modal bg-primary">
+  <div class="modal-box">
+    <form method="dialog">
+      <button class="btn btn-sm btn-circle btn-ghost absolute right-4 top-4 text-2xl text-white">✕</button>
+    </form>
+    <div>
+        <ul class=" font-montserrat-bold text-white text-center text-3xl">
+           <li class="mt-2"><a href="/">Inicio</a></li>
+           <li class="mt-2"><a href="/modelos">Modelos</a></li>
+           <li class="mt-2"><a href="/modelos/buganvilia-a">Buganvilia A</a></li>
+           <li class="mt-2"><a href="/modelos/veranera-a">Veranera A</a></li>
+            <li class="mt-2"><a href="/amenidades">Amenidades</a></li>
+           <li class="mt-2"><a href="/#contacto">Contacto</a></li>
+        </ul>
+    </div>
+  </div>
+</dialog>
     <header class="bg-primary">
         <div class="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-16">
             <div class="flex h-20 items-center justify-between">
@@ -53,7 +70,7 @@ import { RouterLink } from 'vue-router'
                     </nav>
                     <div class="flex items-center gap-4">
                         <div class="block md:hidden">
-                            <button class=" transition hover:text-gray-600/75">
+                            <button class=" transition hover:text-gray-600/75 btn"  onclick="my_modal_3.showModal()">
                                 <font-awesome-icon :icon="['fas', 'bars']" class="text-white icon-bars" />
                             </button>
                         </div>

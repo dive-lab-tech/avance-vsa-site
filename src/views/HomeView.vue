@@ -37,21 +37,21 @@ const widthScreen = () => {
                     <div class="flex flex-col justify-between">
                         <img src="@/assets/image/txt-intro-1.png" alt="" />
                         <div class="pl-16 max-[767px]:pl-0 container-btn-intro">
-                            <a href="" class="btn-intro-home">Ver más<font-awesome-icon :icon="['fas', 'arrow-right']"
+                            <a href="/#nuestro-proyecto" class="btn-intro-home">Ver más<font-awesome-icon :icon="['fas', 'arrow-right']"
                                     class="pl-4" /></a>
                         </div>
                     </div>
                     <div class="flex flex-col justify-between">
                         <img src="@/assets/image/txt-intro-2.png" alt="" srcset="" />
                         <div class="pl-16 max-[767px]:pl-0 container-btn-intro">
-                            <a href="" class="btn-intro-home">Ver más<font-awesome-icon :icon="['fas', 'arrow-right']"
+                            <a href="/#maps" class="btn-intro-home">Ver más<font-awesome-icon :icon="['fas', 'arrow-right']"
                                     class="pl-4" /></a>
                         </div>
                     </div>
                     <div class="flex flex-col justify-between">
                         <img src="@/assets/image/txt-intro-3.png" alt="" srcset="" />
                         <div class="pl-16 max-[767px]:pl-0 container-btn-intro">
-                            <a href="" class="btn-intro-home">Ver más<font-awesome-icon :icon="['fas', 'arrow-right']"
+                            <a href="/#contacto" class="btn-intro-home">Ver más<font-awesome-icon :icon="['fas', 'arrow-right']"
                                     class="pl-4" /></a>
                         </div>
                     </div>
@@ -59,10 +59,10 @@ const widthScreen = () => {
             </div>
         </section>
         <!-- Section about us -->
-        <section class="w-full bg-accent px-36 py-20 max-[1199px]:px-5">
+        <section class="w-full bg-accent px-36 py-20 max-[1199px]:px-5" id="nuestro-proyecto">
             <div class="grid grid-cols-2 max-[767px]:grid-cols-1">
                 <div class="px-10 max-[767px]:px-0">
-                    <h1 class="font-montserrat-black text-4xl">Sobre nuestro proyecto</h1>
+                    <h1 class="font-montserrat-black text-2xl lg:text-4xl">Sobre nuestro proyecto</h1>
                     <p class="font-montserrat-medium font-bold">Conoce tu nuevo lugar para vivir</p>
                     <br />
                     <p class="font-montserrat-medium font-bold">
@@ -159,7 +159,7 @@ const widthScreen = () => {
                 </div>
             </section>
             <!-- Section contact -->
-            <section class="w-full py-10" id="contacto">
+            <section class="w-full py-10" >
                 <FormHome />
             </section>
         </div>
