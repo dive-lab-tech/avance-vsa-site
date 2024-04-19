@@ -1,6 +1,11 @@
 <script setup>
+import { useRouter } from 'vue-router'
+const router = useRouter()
+
+
 </script>
-<template><div>
+<template>
+  <div>
     <div class="grid h-screen place-content-center bg-white px-4">
   <div class="text-center">
     <h1 class="text-9xl font-black text-gray-200">404</h1>
@@ -10,14 +15,12 @@
     <p class="mt-4 text-gray-500">Pagina no encontrada</p>
 
     <a
-      href="/"
+      @click="router.push('/')"
       class="mt-6 inline-block rounded bg-primary px-5 py-3 text-sm font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring"
     >
       Regresar al inicio
     </a>
   </div>
 </div>
-</div></template>
-<style scoped>
-
-</style>
+</div>
+</template>

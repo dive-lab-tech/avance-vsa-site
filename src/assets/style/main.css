@@ -28,6 +28,25 @@
   src: url('@/assets/fonts/montserrat/Montserrat-Regular.woff2') format('woff2');
 }
 
+
+@font-face {
+  font-family: 'Magnify-Regular';
+  font-style: normal;
+  font-weight: 400;
+  src: url('@/assets/fonts/Magnify/Magnify-Regular.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Magnify-Bold';
+  font-style: normal;
+  font-weight: 400;
+  src: url('@/assets/fonts/Magnify/Magnify-Bold.woff2') format('woff2');
+}
+
+
+
+
+
 /* Estilos iniciales  */
 
 * {

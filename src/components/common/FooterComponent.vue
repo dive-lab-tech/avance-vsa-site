@@ -16,6 +16,7 @@
 
 <style scoped>
 footer {
+    position: relative;
     background-color: transparent;
     background-image: linear-gradient(180deg, #1a3329 44%, #0d1a15 100%);
 }

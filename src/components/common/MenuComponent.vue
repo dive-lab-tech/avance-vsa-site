@@ -1,5 +1,8 @@
 <script setup>
 import { RouterLink } from 'vue-router'
+import { useRouter } from 'vue-router'
+
+const router = useRouter();
 </script>
 <template>
   <dialog id="my_modal_3" class="modal bg-primary">
@@ -14,19 +17,23 @@ import { RouterLink } from 'vue-router'
            <li class="mt-2"><a href="/modelos/buganvilia-a">Buganvilia A</a></li>
            <li class="mt-2"><a href="/modelos/veranera-a">Veranera A</a></li>
             <li class="mt-2"><a href="/amenidades">Amenidades</a></li>
-           <li class="mt-2"><a href="/#contacto">Contacto</a></li>
+           <li class="mt-2"><a 
+            @onclick="router.push('/#contacto')"
+            >Contacto</a></li>
         </ul>
     </div>
   </div>
 </dialog>
     <header class="bg-primary">
-        <div class="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-16">
+        <div class="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-16"
+        v-if="router.currentRoute.value.path != '/usa'"
+        >
             <div class="flex h-20 items-center justify-between">
                 <div class="flex-1 md:flex md:items-center md:gap-12">
-                    <a class="block text-teal-600" href="/">
+                    <RouterLink class="block text-teal-600" to="/">
                         <span class="sr-only">Home</span>
                         <img src="@/assets/image/logo-VSA.png" alt="" srcset="" class="logo">
-                    </a>
+                    </RouterLink>
                 </div>
 
                 <div class="md:flex md:items-center md:gap-12">
@@ -78,6 +85,20 @@ import { RouterLink } from 'vue-router'
                 </div>
             </div>
         </div>
+        <div class="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-16"
+        v-if="router.currentRoute.value.path == '/usa'"
+        >
+            <div class="flex h-28 items-center justify-between">
+                <div class=" flex justify-center w-full ">
+                    <RouterLink class="block text-teal-600" to="/">
+                        <span class="sr-only">Home</span>
+                        <img src="@/assets/image/logo-VSA.png" alt="" srcset="" class="logo-usa">
+                    </RouterLink>
+                </div>
+
+               
+            </div>
+        </div>
     </header>
 </template>
 
@@ -85,7 +106,9 @@ import { RouterLink } from 'vue-router'
 .logo {
     width: 150px;
 }
-
+.logo-usa {
+    width: 180px;
+}
 .icon-bars{
     width: 30px;
     height: 30px;

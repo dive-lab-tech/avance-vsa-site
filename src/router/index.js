@@ -19,6 +19,11 @@ const router = createRouter({
       component: ()=> import('../views/ModelosView.vue')
     },
     {
+      path: '/usa',
+      name: 'form-usa',
+      component: ()=> import('../views/FormUSA.vue')
+    },
+    {
       path: '/modelos/veranera-a',
       name: 'veranera-a',
       component: ()=> import('../views/VeraneraAView.vue')
@@ -34,11 +39,11 @@ const router = createRouter({
       name: 'amenidades',
       component: ()=> import('../views/AmenidadesView.vue')
     },
-    {
-      path: '/prueba',
-      name: 'prueba',
-      component: ()=> import('@/components/common/ContactComponent.vue')
-    },
+    // {
+    //   path: '/prueba',
+    //   name: 'prueba',
+    //   component: ()=> import('@/components/common/ContactComponent.vue')
+    // },
     {
       path: '/:catchAll(.*)',
       name: 'NotFound',
