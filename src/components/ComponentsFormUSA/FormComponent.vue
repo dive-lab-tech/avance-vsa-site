@@ -36,7 +36,7 @@ const onSubmit = handleSubmit(
             email: values.email,
             phone: values.phone,
             message: values.option==1 ? 'Comunicarse por teléfono' : 'Comunicarse por correo electrónico',
-            project_name: '',
+            project_name: 'Residencial Villas de San Andrés USA',
         };
 
         try {
