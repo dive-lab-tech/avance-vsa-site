@@ -35,14 +35,13 @@ const onSubmit = handleSubmit(
             name: values.name,
             email: values.email,
             phone: values.phone,
+            message: values.option==1 ? 'Comunicarse por teléfono' : 'Comunicarse por correo electrónico',
             project_name: '',
-            message: '',
-            option: values.option,
         };
 
         try {
             console.log(data);
-            const response = await axios.post('https://back.avanceingenieros.com/api/contacts/42', data);
+            const response = await axios.post('https://back.avanceingenieros.com/api/contacts/6', data);
             console.log(response);
             Swal.fire({
                 title: '¡Gracias!',
@@ -107,8 +106,9 @@ const formatPhoneNumber = (e) => {
 
                             <select name="option" id="" v-model="option" v-bind="optionAttrs">
                                 <option value=""  disabled selected>¿Por qué medio quieres que te contacten?</option>
-                                <option value="Proyecto 1">Correo electrónico</option>
-                                <option value="Proyecto 2">Número de teléfono </option>
+                                <option value="1">Número de teléfono </option>
+                                <option value="2">Correo electrónico</option>
+                               
                             </select>
 
 

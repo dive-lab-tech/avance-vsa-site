@@ -6,10 +6,10 @@ import FormComponent from '@/components/ComponentsFormUSA/FormComponent.vue';
 <template>
     <div class="mainContainer">
         <div class="img-container">
-            <img src="https://images.pexels.com/photos/1438832/pexels-photo-1438832.jpeg" alt="" srcset="">
+            <img src="@/assets/image/banner-usa.jpg" alt="" srcset="">
         </div>
         <div class="img-container-mobile">
-            <img src="@/assets/image/banner-usa.jpg" alt="" srcset="">
+            <img src="@/assets/image/banner-usa-mobile.jpg" alt="" srcset="">
         </div>
         <div class="flex justify-center">
             <div class="container">
@@ -55,13 +55,15 @@ import FormComponent from '@/components/ComponentsFormUSA/FormComponent.vue';
 
 .img-container {
     width: 100%;
-    height: 60vh;
+    height: 90vh;
 }
 
 .img-container img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    /* Hacer que empiece desde abajo */
+    object-position: 0 100%;
 }
 .img-container-mobile{
     display: none;
