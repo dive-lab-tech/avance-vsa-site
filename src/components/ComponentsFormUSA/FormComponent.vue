@@ -14,6 +14,7 @@ const {  errors, defineField, resetForm, handleSubmit } = useForm({
         name: yup.string().min(6, 'El nombre debe tener al menos 6 caracteres').required('El nombre es obligatorio'),
         phone: yup.string().matches(/^\d{8}$/, 'El número de teléfono debe tener exactamente 8 dígitos').required('El número de teléfono es obligatorio'),
         option: yup.string().required('Seleccione una opción'),
+        salary: yup.string().required('Seleccione una opción'),
     }),
 
 });
@@ -22,6 +23,8 @@ const [email, emailAttrs] = defineField('email');
 const [name, nameAttrs] = defineField('name');
 const [phone, phoneAttrs] = defineField('phone');
 const [option, optionAttrs] = defineField('option');
+const [salary, salaryAttrs] = defineField('salary');
+salary.value = '';
 option.value = '';
 
 
@@ -35,8 +38,8 @@ const onSubmit = handleSubmit(
             name: values.name,
             email: values.email,
             phone: values.phone,
-            message: values.option==1 ? 'Comunicarse por teléfono' : 'Comunicarse por correo electrónico',
-            project_name: 'Residencial Villas de San Andrés USA',
+            familyincome_id: values.salary,
+            message: values.option==='1' ? 'Comunicarse por teléfono' : values.option==='2' ? 'Comunicarse por correo' : 'Comunicarse por WhatsApp',
         };
 
         try {
@@ -92,6 +95,7 @@ const formatPhoneNumber = (e) => {
             <div class=" " id="contacto">
 
                 <div>
+                    <p class="mb-3 text-xl">Para aplicar  a una casa en Villas de San Andrés debes contar con ingresos familiares desde $3,000 mensuales. </p>
                     <form action="post" @submit="onSubmit">
                         <div class="grid gap-5">
                             <input type="text" name="name" placeholder="Tu nombre " v-model="name" v-bind="nameAttrs"
@@ -102,12 +106,19 @@ const formatPhoneNumber = (e) => {
                             <input type="tel" name="phone" placeholder="Tu número de contácto"
                                 v-on:input="formatPhoneNumber" v-model="phone" v-bind="phoneAttrs" step="1"
                                 maxlength="8" class="py-2">
-
+                                <select name="salary" id="" v-model="salary" v-bind="salaryAttrs">
+                                <option value=""  disabled selected>Seleccione sus ingresos mensuales</option>
+                                <option value="1">$2,000 a $2,500</option>
+                                <option value="2">$3,000 a $3,500</option>
+                                <option value="3">$3,500 a $4,000</option>
+                                <option value="4">$4,000 a más</option>
+                            </select>
 
                             <select name="option" id="" v-model="option" v-bind="optionAttrs">
                                 <option value=""  disabled selected>¿Por qué medio quieres que te contacten?</option>
                                 <option value="1">Número de teléfono </option>
                                 <option value="2">Correo electrónico</option>
+                                <option value="3">WhatsApp</option>
                                
                             </select>
 
@@ -122,6 +133,8 @@ const formatPhoneNumber = (e) => {
                            
                         </div>
                     </form>
+
+                   
                 </div>
             </div>
         </div>

@@ -86,14 +86,20 @@ class="mySwiper w-full"
     }">
 
       <SwiperSlide>
+        <div class="flex justify-center"><img src="@/assets/image/images-veranera-a/VSA-Veranera-1.jpg"></div>
+      </SwiperSlide>
+      <SwiperSlide>
+        <div class="flex justify-center"><img src="@/assets/image/images-veranera-a/VSA-Veranera-2.jpg"></div>
+      </SwiperSlide>
+      <SwiperSlide>
         <div class="flex justify-center"><img src="@/assets/image/images-veranera-a/VSA-Veranera-3.jpg"></div>
       </SwiperSlide>
       <SwiperSlide>
         <div class="flex justify-center"><img src="@/assets/image/images-veranera-a/VSA-Veranera-4.jpg"></div>
       </SwiperSlide>
-      <SwiperSlide>
+      <!-- <SwiperSlide>
         <div class="flex justify-center"><img src="@/assets/image/images-veranera-a/VSA-Veranera-5.jpg"></div>
-      </SwiperSlide>
+      </SwiperSlide> -->
       <SwiperSlide>
         <div class="flex justify-center"><img src="@/assets/image/images-veranera-a/VSA-Veranera-6.jpg"></div>
       </SwiperSlide>
@@ -105,9 +111,6 @@ class="mySwiper w-full"
       </SwiperSlide>
       <SwiperSlide>
         <div class="flex justify-center"><img src="@/assets/image/images-veranera-a/VSA-Veranera-9.jpg"></div>
-      </SwiperSlide>
-      <SwiperSlide>
-        <div class="flex justify-center"><img src="@/assets/image/images-veranera-a/VSA-Veranera-10.jpg"></div>
       </SwiperSlide>
     </swiper>
 
